@@ -16,6 +16,10 @@ basée sur les diagrammes d'états-transitions.
 *)
 
 module Lex =
+    type Var = A | B | C
+    type Op = Plus | Minus | Multiply | Divide
+    type LexicalUnit = Var of Var | Int of int | Op of Op
+    
     type IndexedString = { string: string; mutable index : int; output: List<LexicalUnit> }
 
     let peekChar { string = string; index = index } = 
@@ -39,4 +43,3 @@ module Lex =
     // d'assignation valide.
     let parse string =
         failwith "Unimplemented."
-    
