@@ -38,8 +38,11 @@ module Lex =
     let skipWhitespace istring =
         while peekChar istring = Some ' ' do incIndex istring
 
-    // Prend une chaîne de caractère en entrée et retourne la structure
-    // lexicale Assign si la chaîne en entrée est une expression du langage 
-    // d'assignation valide.
+    // Prend une chaîne de caractère en entrée et retourne une liste de lexèmes
+    // si la chaîne en entrée est une expression de la grammaire valide.
     let parse string =
-        failwith "Unimplemented."
+        let istring = { string = string; index = 0; output = List<LexicalUnit>() }
+
+        // Votre code ici.
+
+        istring.output |> List.ofSeq
